@@ -15,14 +15,7 @@ function getLoopSave() {
 
 
 RESET.loop = {
-    get unl() {
-        const loop_res = ["loop","mega_loop","super_loop","hyper_loop","omega_loop","infinity_loop"]
-        let looptype = "loop"
-        for (let x = 0; x < loop_res.length; x++){
-            looptype = loop_res[x]
-        }
-        return player.hsj >= 8 || player.loops[looptype].gte(1)
-    },
+    unl: ()=>player.hsj >= 8 || player.loops.loop.gte(1),
 
     req: ()=>player.sol.bestStage.gte(3250),
     reqDesc: ()=> `Reach stage ${format(3250)} atleast once!`,
