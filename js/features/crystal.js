@@ -23,7 +23,7 @@ MAIN.crystal = {
 
         if (inChal(5)) x = x.root(2)
 
-        return x.floor()
+        return x.mul(tmp.tloopmult).floor()
     },
 }
 
@@ -213,7 +213,7 @@ MAIN.oil = {
 
         x = x.mul(solarUpgEffect(1,7))
 
-        return x.floor()
+        return x.mul(tmp.tloopmult).floor()
     },
 }
 
@@ -393,7 +393,7 @@ MAIN.cloud = {
 
         x = x.mul(solarUpgEffect(1,12))
 
-        return x.floor()
+        return x.mul(tmp.tloopmult).floor()
     },
 }
 

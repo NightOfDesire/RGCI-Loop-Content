@@ -77,7 +77,7 @@ const MAIN = {
             tmp.grass_overflow = before.log10().div(x.log10())
         } else tmp.grass_overflow = E(1)
 
-        return x
+        return x.mul(tmp.tloopmult)
     },
     grassCap() {
         let x = 10+upgEffect('grass',1,0)+upgEffect('perk',1,0)+upgEffect('ap',4,0)+starTreeEff('progress',0,0)
@@ -182,7 +182,7 @@ const MAIN = {
     
         .pow(solarUpgEffect(4,10)).pow(solarUpgEffect(4,15))
 
-        return x
+        return x.mul(tmp.tloopmult)
     },
     tpGain() {
         if (inChal(2) || inChal(7)) return E(0)
@@ -232,7 +232,7 @@ const MAIN = {
         
         .pow(solarUpgEffect(4,11)).pow(solarUpgEffect(4,16))
 
-        return x
+        return x.mul(tmp.tloopmult)
     },
     rangeCut: ()=>50+upgEffect('grass',4,0)+upgEffect('perk',4,0)+upgEffect('planetarium',3,0),
     autoCut: ()=>hasStarTree('reserv',2)?0.01:5-(player.planetoid.active?0:upgEffect('auto',0,0)+upgEffect('plat',0,0)+starTreeEff('progress',3,0)),
@@ -362,7 +362,7 @@ const MAIN = {
         
         .pow(solarUpgEffect(4,12)).pow(solarUpgEffect(4,17))
 
-        return x
+        return x.mul(tmp.tloopmult)
     },
     checkCutting() {
         if (player.xp.gte(tmp.level.next)) {
@@ -530,7 +530,7 @@ tmp_update.push(()=>{
 
         tmp.platGain = Decimal.mul(tmp.platGain,upgEffect('oil',4))
 
-        tmp.platGain = Decimal.ceil(tmp.platGain.mul(tmp.compact))
+        tmp.platGain = Decimal.ceil(tmp.platGain.mul(tmp.compact).mul(tmp.tloopmult))
     }
 
     if (hasCentralized(17)) {
@@ -548,7 +548,7 @@ tmp_update.push(()=>{
         }
         tmp.moonstoneGain = tmp.moonstoneGain.mul(solarUpgEffect(3,2)).mul(solarUpgEffect(1,20))
 
-        tmp.moonstoneGain = tmp.moonstoneGain.mul(tmp.compact).ceil()
+        tmp.moonstoneGain = tmp.moonstoneGain.mul(tmp.compact).mul(tmp.tloopmult).ceil()
     }
 
     tmp.platChance = 0.005

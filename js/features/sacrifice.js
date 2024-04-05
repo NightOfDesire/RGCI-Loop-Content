@@ -16,7 +16,7 @@ MAIN.sac = {
 
         x = x.mul(solarUpgEffect(1,14))
 
-        return x.floor()
+        return x.mul(tmp.tloopmult).floor()
     },
 }
 

@@ -28,7 +28,7 @@ MAIN.gal = {
         x = x.mul(solarUpgEffect(3,3))
         .mul(solarUpgEffect(1,13))
 
-        return x.floor()
+        return x.mul(tmp.tloopmult).floor()
     },
 }
 

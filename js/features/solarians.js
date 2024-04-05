@@ -946,7 +946,7 @@ function getSolarianSave() {
 function updateSolarianTemp() {
     const ts = tmp.sol
 
-    ts.compression_mult = SOL_COMPRESSION.mult
+    ts.compression_mult = SOL_COMPRESSION.mult.mul(tmp.tloopmult)
 
     var su24 = hasSolarUpgrade(7,24)
 
@@ -956,22 +956,22 @@ function updateSolarianTemp() {
         ts.comp_eff[i] = e
     }
 
-    ts.enemy_max_health = SOLARIANS.enemy.max_health
-    ts.soul_gain = SOLARIANS.enemy.soul_gain
-    ts.offense = SOLARIANS.offense
-    ts.collectingMult = SOLARIANS.collectingMult
-    ts.formingMult = SOLARIANS.formingMult
-    ts.restoreMult = SOLARIANS.restoreMult
-    ts.fundMult = SOLARIANS.fundMult
+    ts.enemy_max_health = SOLARIANS.enemy.max_health.div(tmp.tloopmult)
+    ts.soul_gain = SOLARIANS.enemy.soul_gain.mul(tmp.tloopmult)
+    ts.offense = SOLARIANS.offense.mul(tmp.tloopmult)
+    ts.collectingMult = SOLARIANS.collectingMult.mul(tmp.tloopmult)
+    ts.formingMult = SOLARIANS.formingMult.mul(tmp.tloopmult)
+    ts.restoreMult = SOLARIANS.restoreMult.mul(tmp.tloopmult)
+    ts.fundMult = SOLARIANS.fundMult.mul(tmp.tloopmult)
 
     ts.soul_rate = hasSolarUpgrade(7,9) ? 0.01 : 0
 
-    ts.manaGain = SOLARIANS.manaGain
+    ts.manaGain = SOLARIANS.manaGain.mul(tmp.tloopmult)
 
     ts.attack_speed = ts.offense.gte(ts.enemy_max_health) ? ts.offense.div(ts.enemy_max_health).log10().add(1).mul(2).toNumber() : 1
 
-    ts.stageBonus = SOLARIANS.stageBonus
-    ts.sunriseFM = SOLARIANS.sunriseFM
+    ts.stageBonus = SOLARIANS.stageBonus.mul(tloopmult)
+    ts.sunriseFM = SOLARIANS.sunriseFM.mul(tloopmult)
 }
 
 function getStageBonus(id,def=1) { return tmp.sol.stageBonus?.[id]??def }

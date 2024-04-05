@@ -25,7 +25,7 @@ MAIN.steel = {
 
         if (tmp.minStats.gs >= 25) x = x.mul(getGSEffect(6,1))
 
-        return x.floor()
+        return x.mul(tmp.tloopmult).floor()
     },
     foundryEff() {
         let max = Decimal.mul(1000,upgEffect('factory',0))
@@ -70,7 +70,7 @@ MAIN.steel = {
 
             if (player.recel && player.hsj <= 0) x = x.root(2)
 
-            return x.max(1)
+            return x.mul(tmp.tloopmult).max(1)
         },
         effs: [
             {

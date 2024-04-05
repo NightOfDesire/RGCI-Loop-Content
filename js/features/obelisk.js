@@ -63,10 +63,12 @@ tmp_update.push(()=>{
 
     x = x.pow(getStageBonus('lp'))
 
-    tmp.LPgain = x
+    tmp.LPgain = x.mul(tmp.tloopmult)
 
     tmp.lunar_length = 7
     tmp.lunar_max_active = Math.min(1+getPTEffect(4,0),tmp.lunar_length)
+
+    if (tmp.tloopmult.gt(1)) tmp.lunar_max_active = 7
 
     let su = hasSolarUpgrade(2,17)
 

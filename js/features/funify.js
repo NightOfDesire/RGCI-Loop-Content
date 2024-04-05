@@ -19,7 +19,7 @@ MAIN.fun = {
 
         x = x.mul(solarUpgEffect(1,8))
 
-        return x.floor()
+        return x.mul(tmp.tloopmult).floor()
     },
     SFRGTgain() {
         if (hasCentralized(11)) return player.grass.floor();
@@ -35,7 +35,7 @@ MAIN.fun = {
 
         x = x.mul(tmp.chargeEff[11]||1)
 
-        return x
+        return x.mul(tmp.tloopmult)
     },
 }
 
