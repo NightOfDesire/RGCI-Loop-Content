@@ -24,7 +24,7 @@ MAIN.pp = {
 
         if (inChal(3) || inChal(5)) x = x.root(2)
 
-        return x.mul(tmp.tloopmult).floor()
+        return x.mul(tmp.loopbonus).floor()
     },
 }
 
@@ -170,7 +170,7 @@ MAIN.ap = {
 
         x = x.mul(solarUpgEffect(1,6))
 
-        return x.mul(tmp.tloopmult).floor()
+        return x.mul(tmp.loopbonus).floor()
     },
 }
 
@@ -354,7 +354,7 @@ MAIN.np = {
 
         x = x.mul(upgEffect('dm',6)).mul(upgEffect('sfrgt',5)).mul(upgEffect('cloud',3)).mul(solarUpgEffect(1,11))
 
-        return x.mul(tmp.tloopmult).floor()
+        return x.mul(tmp.loopbonus).floor()
     },
 }
 

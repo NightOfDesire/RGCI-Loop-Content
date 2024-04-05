@@ -78,7 +78,7 @@ const PLANETOID = {
             tmp.pm_overflow = before.log10().div(x.log10())
         } else tmp.pm_overflow = E(1)
 
-        return x.mul(tmp.tloopmult)
+        return x.mul(tmp.loopbonus)
     },
     cosmicGain() {
         let x = E(1)
@@ -106,7 +106,7 @@ const PLANETOID = {
 
         if (hasStarTree('reserv',22)) x = x.mul(tmp.compact)
 
-        return x.mul(tmp.tloopmult)
+        return x.mul(tmp.loopbonus)
     },
     level: {
         req(i) {
@@ -161,7 +161,7 @@ const PLANETOID = {
 
         if (player.sn.tier.gte(1)) x = x.mul(100)
 
-        return x.mul(tmp.tloopmult).floor()
+        return x.mul(tmp.loopbonus).floor()
     },
     observGain() {
         let x = E(1)
@@ -184,7 +184,7 @@ const PLANETOID = {
 
         x = x.mul(solarUpgEffect(3,6)).mul(solarUpgEffect(4,9))
 
-        return x.mul(tmp.tloopmult).floor()
+        return x.mul(tmp.loopbonus).floor()
     },
     astroGain() {
         if (hasCentralized(20)) return player.planetoid.pm.floor()
@@ -207,7 +207,7 @@ const PLANETOID = {
 
         x = x.mul(solarUpgEffect(3,7)).mul(solarUpgEffect(1,16))
 
-        return x.mul(tmp.tloopmult).floor()
+        return x.mul(tmp.loopbonus).floor()
     },
     measureGain() {
         if (hasCentralized(21)) return player.planetoid.pm.floor()
@@ -229,7 +229,7 @@ const PLANETOID = {
 
         x = x.mul(solarUpgEffect(3,8)).mul(solarUpgEffect(1,17))
 
-        return x.mul(tmp.tloopmult).floor()
+        return x.mul(tmp.loopbonus).floor()
     },
     planetary: {
         gain() {
@@ -245,7 +245,7 @@ const PLANETOID = {
 
             x = x.mul(solarUpgEffect(3,9)).mul(solarUpgEffect(1,18))
 
-            return x.mul(tmp.tloopmult).floor()
+            return x.mul(tmp.loopbonus).floor()
         },
         tierReq() {
             let p = player.planetoid.planetTier

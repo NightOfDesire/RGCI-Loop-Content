@@ -295,16 +295,16 @@ tmp_update.push(()=>{
 
     tmp.scale_eclipse = Decimal.add(300,getFormingBonus('dark',2,0))
 
-    tmp.solarShardGain = SUPERNOVA.gain().mul(tmp.tloopmult)
+    tmp.solarShardGain = SUPERNOVA.gain().mul(tmp.loopbonus)
     tmp.maxSolarFlare = SUPERNOVA.maxFlare()
-    tmp.flareGain = SUPERNOVA.flareGain().mul(tmp.tloopmult)
-    tmp.SRgain = SUPERNOVA.eclipse.SRgain.mul(tmp.tloopmult)
-    tmp.remnantGain = SUPERNOVA.eclipse.remnantGain.mul(tmp.tloopmult)
+    tmp.flareGain = SUPERNOVA.flareGain().mul(tmp.loopbonus)
+    tmp.SRgain = SUPERNOVA.eclipse.SRgain.mul(tmp.loopbonus)
+    tmp.remnantGain = SUPERNOVA.eclipse.remnantGain.mul(tmp.loopbonus)
 
-    tmp.sunstoneGain = SOLAR_OBELISK.sunstoneGain.mul(tmp.tloopmult)
-    tmp.divineSoulGain = SOLAR_OBELISK.divineSoulGain.mul(tmp.tloopmult)
+    tmp.sunstoneGain = SOLAR_OBELISK.sunstoneGain.mul(tmp.loopbonus)
+    tmp.divineSoulGain = SOLAR_OBELISK.divineSoulGain.mul(tmp.loopbonus)
 
-    tmp.unstableSoulGain = SOLAR_OBELISK.unstableSoulGain.mul(tmp.tloopmult)
+    tmp.unstableSoulGain = SOLAR_OBELISK.unstableSoulGain.mul(tmp.loopbonus)
     tmp.twilightBonusIncrease = SOLAR_OBELISK.twilight.bonusIncrease
     tmp.twilightBonus = SOLAR_OBELISK.twilight.bonusEffect
 

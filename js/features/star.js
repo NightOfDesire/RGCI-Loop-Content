@@ -99,7 +99,7 @@ function stardustGain() {
 
     x = x.mul(solarUpgEffect(3,0)).mul(solarUpgEffect(4,8)).mul(getASEff('sd'))
 
-    return x.mul(tmp.tloopmult)
+    return x.mul(tmp.loopbonus)
 }
 
 const THE_STAR = {
@@ -114,7 +114,7 @@ const THE_STAR = {
 
         .mul(getFormingBonus('dark',1))
 
-        return x.mul(tmp.tloopmult)
+        return x.mul(tmp.loopbonus)
     },
     starGrowthReq: [E(1e7),E(1e10),E(1e13),E(1e20),E(1e27)],
     get getStarTier() {

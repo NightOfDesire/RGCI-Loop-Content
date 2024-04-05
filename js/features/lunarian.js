@@ -100,7 +100,7 @@ function getStartingStats() {
 
     x.lunarian = Decimal.add(100,getFormingBonus("fund",1,0)).mul(getFormingBonus("adv",1,1)).round()
 
-    x.damage = Decimal.mul(1,getFormingBonus("fund",0)).mul(getFormingBonus("adv",0,1)).mul(tmp.tloopmult)
+    x.damage = Decimal.mul(1,getFormingBonus("fund",0)).mul(getFormingBonus("adv",0,1)).mul(tmp.loopbonus)
 
     return x
 }

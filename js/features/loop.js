@@ -67,7 +67,7 @@ tmp.el.update.loopinfo = () => {
     for (let x=0;x<LOOP_RES.length;x++){
         let y = LOOP_RES[x]
         tmp.el["loopinfo_"+y].setHTML(`
-        <img src="images/${y}.png">${LR2[x]}: ${format(player.loops[y],0)} ${y == "loop" ? `(${formatMult(tmp.loopmult,0)})` : `(+${formatMult(LRM[x].mul(player.loops[y]))})`} Loop Multi.
+        <img src="images/${y}.png">${LR2[x]}: ${format(player.loops[y],0)} ${y == "loop" ? `(${formatMult(tmp.baseloopbonus,0)})` : `(+${formatMult(LRM[x].mul(player.loops[y]))})`} Loop Multi.
         `)
         tmp.el["loopinfo_"+y].setDisplay(player.loops[y].gte(1))
     }
@@ -82,9 +82,9 @@ tmp_update.push(()=>{
     else if (player.sol.bestStage.gte(7777)) {
         tl.loopgain = E(1).add(player.sol.bestStage.div(7777).floor())
     }
-    tmp.loopmult = E(1).add(player.loops.loop)
+    tmp.baseloopbonus = E(1).add(player.loops.loop)
 
-    tmp.tloopmult = tmp.loopmult
+    tmp.loopbonus = tmp.baseloopbonus
     .add(Decimal.mul(10, player.loops.mega_loop))
     .add(Decimal.mul(50, player.loops.super_loop))
     .add(Decimal.mul(275, player.loops.hyper_loop))
