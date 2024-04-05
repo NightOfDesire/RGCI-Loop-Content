@@ -443,6 +443,7 @@ function loadGame(start=true, gotNaN=false) {
     wipe()
     load(tmp.prevSave)
     resetTemp()
+    updateTemp()
     setupHTML()
 
     for (let x in UPGS) {
@@ -472,7 +473,7 @@ function loadGame(start=true, gotNaN=false) {
 
         tmp.el.offline_box.setDisplay(false) 
         tmp.el.map.setDisplay(false) 
-
+        updateTemp()
         updateHTML()
 
         setTimeout(()=>{
