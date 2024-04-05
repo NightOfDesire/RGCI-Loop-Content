@@ -972,8 +972,9 @@ function updateSolarianTemp() {
 
     ts.attack_speed = ts.offense.gte(ts.enemy_max_health) ? ts.offense.div(ts.enemy_max_health).log10().add(1).mul(2).toNumber() : 1
 
-    ts.stageBonus = SOLARIANS.stageBonus.mul(tmp.loopbonus)
-    ts.sunriseFM = SOLARIANS.sunriseFM.mul(tmp.loopbonus)
+    
+    ts.stageBonus = SOLARIANS.stageBonus
+    ts.sunriseFM = SOLARIANS.sunriseFM
 }
 
 function getStageBonus(id,def=1) { return tmp.sol.stageBonus?.[id]??def }
