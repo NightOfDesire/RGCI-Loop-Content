@@ -8,10 +8,10 @@
     table-align: center;
 	text-align: center;
 
-    text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px, 
+    /*text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px, 
     #000 0px 0px 2px, #000 0px 0px 2px, #000 0px 0px 2px, 
     #000 0px 0px 3px, #000 0px 0px 3px, #000 0px 0px 3px;
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;*/
 }
 
 * { scrollbar-color: auto !important; scrollbar-width: auto !important; }

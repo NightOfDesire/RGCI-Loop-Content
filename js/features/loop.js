@@ -25,7 +25,7 @@ RESET.loop = {
     This boost applies to <i><b>nearly</b></i> resource and stat.
     `,
     resetGain: () => tmp.loops.loopgain.lt(2) ? `Restart for ${format(tmp.loops.loopgain)} loop.` : `Restart for +${format(tmp.loops.loopgain)} loops.`,
-    title: 'The End',
+    title: '<img style="width: 32px; height: 32px;" src="images/Icons/loop.png">The End<img style="width: 32px; height: 32px;" src="images/Icons/loop.png>',
     resetBtn: 'Loop!',
     reset() {
         if (this.req) {
