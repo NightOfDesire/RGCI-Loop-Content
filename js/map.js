@@ -179,10 +179,7 @@ el.update.map = ()=>{
     tmp.el.map_name.setHTML(MAP_NAMES[m_id])
     tmp.el.spaceButton.setDisplay(player.gTimes > 0)
     tmp.el.starButton.setDisplay(player.sn.times > 0)
-    /**@param stop. */
-    /**@param omfg */
-    tmp.el.endButton.setDisplay(player.sol.bestStage.gte(9100) || tmp.loopbonus.gt(1))
-    /**@param why */
+    tmp.el.endButton.setDisplay(player.sol.bestStage.gte(9100) || player.loops.loop.gt(0) || player.loops.mega_loop.gt(0))
     tmp.el.map.setDisplay(map_mode)
 
     if (map_mode) {
