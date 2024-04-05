@@ -192,7 +192,7 @@ el.update.map = ()=>{
     }
 
     tmp.el.main_app.changeStyle('background-color',tmp.space ? "#fff1" : "#fff2")
-    document.body.style.background = tmp.star ? "radial-gradient(circle, #ffa500 0%, #ffc65c 25%, #ffa500 50%, #ffc65c 75%, #ffa500 100%)" : tmp.space ? "#0A001E" : player.planetoid.active ? "#24002C" : "#0052af"
+    document.body.style.background = tmp.end ? "grey" : tmp.star ? "radial-gradient(circle, #ffa500 0%, #ffc65c 25%, #ffa500 50%, #ffc65c 75%, #ffa500 100%)" : tmp.space ? "#0A001E" : player.planetoid.active ? "#24002C" : "#0052af"
     document.body.className = player.planetoid.active ? 'planetoid' : ''
     tmp.el.grass_cap_div.changeStyle('background-color',player.planetoid.active ? "#D000FF" : "#29b146")
 
