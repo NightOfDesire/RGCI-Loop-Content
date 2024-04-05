@@ -1,4 +1,6 @@
 const SOLARIANS = {
+
+
     get offense() {
         let x = player.sol.fight_mult
         
@@ -970,8 +972,8 @@ function updateSolarianTemp() {
 
     ts.attack_speed = ts.offense.gte(ts.enemy_max_health) ? ts.offense.div(ts.enemy_max_health).log10().add(1).mul(2).toNumber() : 1
 
-    ts.stageBonus = SOLARIANS.stageBonus.mul(tloopmult)
-    ts.sunriseFM = SOLARIANS.sunriseFM.mul(tloopmult)
+    ts.stageBonus = SOLARIANS.stageBonus.mul(tmp.loopbonus)
+    ts.sunriseFM = SOLARIANS.sunriseFM.mul(tmp.loopbonus)
 }
 
 function getStageBonus(id,def=1) { return tmp.sol.stageBonus?.[id]??def }
