@@ -7,6 +7,9 @@ var mapPos2 = [3,3]
 var mapID3 = 'star'
 var mapPos3 = [3,3]
 
+var mapID4 = 'tower'
+var mapPos4 = [3,3]
+
 var map_mode = false
 
 window.addEventListener('keydown', e=>{
