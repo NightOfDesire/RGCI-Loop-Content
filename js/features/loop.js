@@ -5,7 +5,6 @@ function getLoopSave() {
         super_loop: E(0),
         hyper_loop: E(0),
         omega_loop: E(0),
-        infinity_loop: E(0),
 
 
 
@@ -14,10 +13,12 @@ function getLoopSave() {
 }
 
 
+
+
 RESET.loop = {
     unl: ()=>player.hsj >= 8 || player.loops.loop.gte(1),
 
-    
+
     req: ()=>player.sol.bestStage.gte(9100),
     reqDesc: ()=> `Reach stage ${format(9100)} atleast once!`,
     resetDesc: `
