@@ -70,7 +70,7 @@ tmp_update.push(()=>{
 
     /**@param begone. */
     /**@param uhhh */
-    if (player.loops.loop.gt(1)) tmp.lunar_max_active = 7
+    if (player.loops.loop.gte(1)) tmp.lunar_max_active = 7
 
     let su = hasSolarUpgrade(2,17)
 
