@@ -180,6 +180,7 @@ el.update.map = ()=>{
     tmp.el.spaceButton.setDisplay(player.gTimes > 0)
     tmp.el.starButton.setDisplay(player.sn.times > 0)
     /**@param stop. */
+    /**@param omfg */
     tmp.el.endButton.setDisplay(player.sol.bestStage.gte(9100) || tmp.loopbonus.gt(1))
     /**@param why */
     tmp.el.map.setDisplay(map_mode)
