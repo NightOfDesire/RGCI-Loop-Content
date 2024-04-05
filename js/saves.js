@@ -178,6 +178,7 @@ function getPlayerData() {
         offline: { time: 0, current: 0, enabled: true },
         timewarp: { amt: 0, time: 0 },
         sn: getSupernovaSave(),
+        loops: getLoopSave(),
 
         synthesis: {
             slot: [],

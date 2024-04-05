@@ -42,7 +42,7 @@ const STAR_MAP = [
     [null,null,'sol','cs',null,null,null],
     [null,'adv','stage','star','sm',null,null],
     [null,null,'solc','lun_map','lun_inv',null,null],
-    [null,null,null,null,null,null,null],
+    [null,null,null,'tower',null,null,null],
     [null,null,null,null,null,null,null],
 ]
 
@@ -80,6 +80,7 @@ const MAP_NAMES = {
     'adv': "Advanced Star",
     'lun_inv': "Lunarian Inventory",
     'lun_map': "Lunarian Map",
+    'tower': 'The Tower'
 }
 
 const MAP_UNLOCKS = {
@@ -93,6 +94,7 @@ const MAP_UNLOCKS = {
     'rp': () => hasUpgrade('factory',6) || player.grassjump>=30,
 
     'synt': () => player.hsj >= 4,
+    'tower': () => player.hsj >= 8,
 
     // Space
 
