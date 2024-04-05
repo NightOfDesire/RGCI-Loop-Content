@@ -84,7 +84,7 @@ tmp_update.push(()=>{
     }
     tmp.baseloopbonus = E(1).add(player.loops.loop)
 
-    tmp.loopbonus = tmp.baseloopbonus
+    tmp.loopbonus = E(1).add(player.loops.loop)
     .add(Decimal.mul(10, player.loops.mega_loop))
     .add(Decimal.mul(50, player.loops.super_loop))
     .add(Decimal.mul(275, player.loops.hyper_loop))
