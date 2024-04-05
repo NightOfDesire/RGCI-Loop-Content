@@ -454,6 +454,8 @@ function loadGame(start=true, gotNaN=false) {
         SC_SCOST[x] = []
         for (let y in STAR_CHART[x]) SC_SCOST[x][y] = STAR_CHART[x][y].cost(0)
     }
+
+    updateTemp()
     
     if (start) {
         for (let x = 0; x < 50; x++) updateTemp()
