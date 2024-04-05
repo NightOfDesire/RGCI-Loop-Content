@@ -15,17 +15,24 @@ function getLoopSave() {
 
 
 RESET.loop = {
-    unl: ()=>player.hsj >= 8,
+    get unl() {
+        const loop_res = ["loop","mega_loop","super_loop","hyper_loop","omega_loop","infinity_loop"]
+        let looptype = "loop"
+        for (let x = 0; x < loop_res.length; x++){
+            looptype = loop_res[x]
+        }
+        return player.hsj >= 8 || player.loops[looptype].gte(1)
+    },
 
     req: ()=>player.sol.bestStage.gte(3250),
     reqDesc: ()=> `Reach stage ${format(3250)} atleast once!`,
     resetDesc: `
     COMPLETELY restart the game, but with a loop.<br><br>
     Loops will provide a 1x boost per loop, which gets better the higher the tier is.<br>
-    This boost applies to <i><b>nearly</b></i> resource and stat.
+    This boost applies to <i><b>nearly</b></i> resource and stat.<br><br><br>
     `,
     resetGain: () => tmp.loops.loopgain.lt(2) ? `Restart for ${format(tmp.loops.loopgain)} loop.` : `Restart for +${format(tmp.loops.loopgain)} loops.`,
-    title: '<img style="width: 32px; height: 32px;" src="images/Icons/loop.png">The End<img style="width: 32px; height: 32px;" src="images/Icons/loop.png>',
+    title: '<img style="width: 32px; height: 32px;" src="images/Icons/loop.png">The End<img style="width: 32px; height: 32px;" src="images/Icons/loop.png">',
     resetBtn: 'Loop!',
     reset() {
         if (this.req) {
@@ -42,6 +49,7 @@ RESET.loop = {
         player.loops = k
     }
 }
+
 
 
 tmp_update.push(()=>{
