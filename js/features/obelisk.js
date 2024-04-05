@@ -68,7 +68,7 @@ tmp_update.push(()=>{
     tmp.lunar_length = 7
     tmp.lunar_max_active = Math.min(1+getPTEffect(4,0),tmp.lunar_length)
 
-    
+    /**@param begone. */
     if (tmp.loopbonus.gt(1)) tmp.lunar_max_active = 7
 
     let su = hasSolarUpgrade(2,17)
