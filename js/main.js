@@ -443,6 +443,7 @@ function updateUnspentPerk() {
 }
 
 tmp_update.push(()=>{
+    tmp.end = player.world == 'end'
     tmp.star = player.world == 'star'
     tmp.space = player.world == 'space'
     tmp.outsideNormal = player.decel || player.recel || player.planetoid.active

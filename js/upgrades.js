@@ -1288,6 +1288,8 @@ function resetUpgrades(id) {
     for (let x in UPGS[id].ctn) player.upgs[id][x] = E(0)
 }
 
+function resetAllUpgrades() {for (let x in UPGS) {for (let y in UPGS[x].ctn){player.upgs[x][y]=E(0)}}}
+
 function buyMaxUpgrades(id) {
     let upgs = UPGS[id]
     for (let x = 0; x < UPGS[id].ctn.length; x++) {

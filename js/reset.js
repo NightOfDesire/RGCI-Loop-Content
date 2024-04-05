@@ -128,7 +128,7 @@ el.update.reset = ()=> {
             tmp.el.twilight_bonus.setHTML(h)
         }
     }
-    else if (mapID3 == "tower") {
+    if (mapID4 == "tower") {
         updateResetHTML('loop')
     }
 }

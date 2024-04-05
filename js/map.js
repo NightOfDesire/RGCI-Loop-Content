@@ -42,8 +42,18 @@ const STAR_MAP = [
     [null,null,'sol','cs',null,null,null],
     [null,'adv','stage','star','sm',null,null],
     [null,null,'solc','lun_map','lun_inv',null,null],
+    [null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null],
+]
+
+const END_MAP = [
+    [null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null],
     [null,null,null,'tower',null,null,null],
     [null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null],
+    [null,null,null,null,null,null,null]
 ]
 
 const MAP_NAMES = {
@@ -113,7 +123,7 @@ const MAP_UNLOCKS = {
 
 const MAP_IDS = (()=>{
     let x = [];
-    [...MAP,...SPACE_MAP,...STAR_MAP].forEach(e => {e.forEach(s => {if (s !== null && !x.includes(s)) x.push(s)})})
+    [...MAP,...SPACE_MAP,...STAR_MAP,...END_MAP].forEach(e => {e.forEach(s => {if (s !== null && !x.includes(s)) x.push(s)})})
     return x
 })()
 
@@ -142,7 +152,7 @@ const MAP_POS_D = [[0,-1],[0,1],[-1,0],[1,0]]
 const MAP_POS_D_NAMES = ['lMap','rMap','uMap','dMap']
 
 el.update.map = ()=>{
-    let m_id = tmp.star ? mapID3 : tmp.space ? mapID2 : mapID
+    let m_id = tmp.end ? mapID4 : tmp.star ? mapID3 : tmp.space ? mapID2 : mapID
 
     for (id of MAP_IDS) {
         let m_div = tmp.el["map_div_"+id]
@@ -162,7 +172,7 @@ el.update.map = ()=>{
     tmp.el.map_name.setHTML(MAP_NAMES[m_id])
     tmp.el.spaceButton.setDisplay(player.gTimes > 0)
     tmp.el.starButton.setDisplay(player.sn.times > 0)
-
+    tmp.el.endButton.setDisplay(player.sol.bestStage.gte(3250) || tmp.tloopmult.gt(1))
     tmp.el.map.setDisplay(map_mode)
 
     if (map_mode) {
