@@ -52,7 +52,7 @@ const STAR_MAP = [
 const END_MAP = [
     [null,null,null,null,null,null,null],
     [null,null,null,null,null,null,null],
-    [null,null,null,null,null,null,null],
+    [null,null,null,'loopinfo',null,null,null],
     [null,null,null,'tower',null,null,null],
     [null,null,null,null,null,null,null],
     [null,null,null,null,null,null,null],
@@ -93,7 +93,11 @@ const MAP_NAMES = {
     'adv': "Advanced Star",
     'lun_inv': "Lunarian Inventory",
     'lun_map': "Lunarian Map",
-    'tower': 'The Tower'
+
+    // The End
+
+    'tower': 'The Tower',
+    'loopinfo': 'Loop Resources Info'
 }
 
 const MAP_UNLOCKS = {

@@ -22,7 +22,7 @@ RESET.loop = {
     resetDesc: `
     COMPLETELY restart the game, but with a loop.<br><br>
     Loops will provide a 1x boost per loop, which gets better the higher the tier is.<br>
-    This boost applies to <i><b>nearly</b></i> resource and stat.<br><br><br>
+    This boost applies to <i><b>nearly</b></i> every resource and stat.<br><br><br>
     `,
     resetGain: () => tmp.loops.loopgain.lt(2) ? `Restart for ${format(tmp.loops.loopgain,0)} loop.` : `Restart for +${format(tmp.loops.loopgain,0)} loops.`,
     title: '<img style="width: 32px; height: 32px;" src="images/Icons/loop.png">The End<img style="width: 32px; height: 32px;" src="images/Icons/loop.png">',
