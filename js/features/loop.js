@@ -17,8 +17,8 @@ function getLoopSave() {
 RESET.loop = {
     unl: ()=>player.hsj >= 8 || player.loops.loop.gte(1),
 
-    req: ()=>player.sol.bestStage.gte(3250),
-    reqDesc: ()=> `Reach stage ${format(3250)} atleast once!`,
+    req: ()=>player.sol.bestStage.gte(8500),
+    reqDesc: ()=> `Reach stage ${format(8500)} atleast once!`,
     resetDesc: `
     COMPLETELY restart the game, but with a loop.<br><br>
     Loops will provide a 1x boost per loop, which gets better the higher the tier is.<br>
@@ -76,11 +76,11 @@ tmp.el.update.loopinfo = () => {
 tmp_update.push(()=>{
     if (!tmp.loops) tmp.loops = {}
     const tl = tmp.loops
-    if (player.sol.bestStage.gte(3250) && player.sol.bestStage.lt(7777)) {
+    if (player.sol.bestStage.gte(8500) && player.sol.bestStage.lt(17500)) {
         tl.loopgain = E(1)
     } 
-    else if (player.sol.bestStage.gte(7777)) {
-        tl.loopgain = E(1).add(player.sol.bestStage.div(7777).floor())
+    else if (player.sol.bestStage.gte(17500)) {
+        tl.loopgain = E(1).add(player.sol.bestStage.div(17500).floor())
     }
     tmp.baseloopbonus = E(1).add(player.loops.loop)
 
