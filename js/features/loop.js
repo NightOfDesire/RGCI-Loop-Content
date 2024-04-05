@@ -49,7 +49,7 @@ const LR2 = [
     'Loops','Mega Loops','Super Loops','Hyper Loops','Omega Loops'
 ]
 const LRM = [
-    E(0),E(10),E(50),E(275),E(1000)
+    0,10,50,275,1000
 ]
 tmp.el.setup.loopinfo = () => {
     let loop_info = new Element("loopinfo_table")
@@ -76,15 +76,13 @@ tmp.el.update.loopinfo = () => {
 tmp_update.push(()=>{
     if (!tmp.loops) tmp.loops = {}
     const tl = tmp.loops
-    if (player.sol.bestStage.gte(9100) && player.sol.bestStage.lt(17500)) {
-        tl.loopgain = player.sol.bestStage.div(9100).floor()
-    } 
-    else if (player.sol.bestStage.gte(17500)) {
-        tl.loopgain = E(1).add(player.sol.bestStage.div(17500).floor())
-    }
+    
+        tl.loopgain = player.sol.bestStage.div(9100).add(player.sol.bestStage.sub(9100).div(2500)).floor()
+    
     tmp.baseloopbonus = E(1).add(player.loops.loop)
 
-    tmp.loopbonus = E(1).add(player.loops.loop)
+    tmp.loopbonus = E(1)
+    .add(player.loops.loop)
     .add(Decimal.mul(10, player.loops.mega_loop))
     .add(Decimal.mul(50, player.loops.super_loop))
     .add(Decimal.mul(275, player.loops.hyper_loop))
