@@ -45,6 +45,7 @@ RESET.loop = {
 
 
 tmp_update.push(()=>{
+    if (!tmp.loops) tmp.loops = {}
     const tl = tmp.loops
     if (player.sol.bestStage.gte(3250) && player.sol.bestStage.lt(7777)) {
         tl.loopgain = E(1)
