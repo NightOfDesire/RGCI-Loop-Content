@@ -18,7 +18,8 @@ RESET.loop = {
     unl: ()=>player.hsj >= 8,
 
     req: ()=>player.sol.bestStage.gte(3250),
-    reqDesc: `
+    reqDesc: ()=> `Reach stage ${format(3250)} atleast once!`,
+    resetDesc: `
     COMPLETELY restart the game, but with a loop.<br><br>
     Loops will provide a 1x boost per loop, which gets better the higher the tier is.<br>
     This boost applies to <i><b>nearly</b></i> resource and stat.
