@@ -69,6 +69,7 @@ tmp.el.update.loopinfo = () => {
         tmp.el["loopinfo_"+y].setHTML(`
         <img src="images/${y}.png">${LR2[x]}: ${format(player.loops[y],0)} ${y == "loop" ? `(${formatMult(tmp.loopmult,0)})` : `(+${formatMult(LRM[x].mul(player.loops[y]))})`} Loop Multi.
         `)
+        tmp.el["loopinfo_"+y].setDisplay(player.loops[y].gte(1))
     }
 }
 
