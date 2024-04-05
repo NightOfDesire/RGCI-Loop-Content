@@ -135,21 +135,21 @@ const MAP_IDS = (()=>{
 })()
 
 function switchMap(dx,dy) {
-    let m_pos = tmp.star ? mapPos3 : tmp.space ? mapPos2 : mapPos
+    let m_pos = tmp.end ? mapPos4 : tmp.star ? mapPos3 : tmp.space ? mapPos2 : mapPos
 
     changeMap(m_pos[0]+dx, m_pos[1]+dy)
 }
 
 function changeMap(x,y) {
-    let m = tmp.star ? STAR_MAP : tmp.space ? SPACE_MAP : MAP
-    let m_pos = tmp.star ? mapPos3 : tmp.space ? mapPos2 : mapPos
+    let m = tmp.end ? END_MAP : tmp.star ? STAR_MAP : tmp.space ? SPACE_MAP : MAP
+    let m_pos = tmp.end ? mapPos4 : tmp.star ? mapPos3 : tmp.space ? mapPos2 : mapPos
 
     let p = m[y][x]
     if (p && (!MAP_UNLOCKS[p] || MAP_UNLOCKS[p]())) {
         m_pos[0] = x
         m_pos[1] = y
-
-        if (tmp.star) mapID3 = p
+        if (tmp.end) mapID4 = p
+        else if (tmp.star) mapID3 = p
         else if (tmp.space) mapID2 = p
         else mapID = p
     }
