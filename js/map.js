@@ -167,8 +167,8 @@ el.update.map = ()=>{
         if (m_div) m_div.setDisplay(id == m_id)
     }
 
-    let [mx,my] = tmp.star ? mapPos3 : tmp.space ? mapPos2 : mapPos
-    let m = tmp.star ? STAR_MAP : tmp.space ? SPACE_MAP : MAP
+    let [mx,my] = tmp.end ? mapPos4 : tmp.star ? mapPos3 : tmp.space ? mapPos2 : mapPos
+    let m = tmp.end ? END_MAP : tmp.star ? STAR_MAP : tmp.space ? SPACE_MAP : MAP
 
     for (let d = 0; d < 4; d++) {
         let dp = MAP_POS_D[d], p = m[my+dp[0]][mx+dp[1]], u = MAP_UNLOCKS[p]
