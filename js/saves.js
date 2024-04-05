@@ -473,6 +473,7 @@ function loadGame(start=true, gotNaN=false) {
 
         tmp.el.offline_box.setDisplay(false) 
         tmp.el.map.setDisplay(false) 
+        /**@nuh @param uh @param nuh @uh */
         updateTemp()
         updateHTML()
 
