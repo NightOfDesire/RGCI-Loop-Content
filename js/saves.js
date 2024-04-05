@@ -443,6 +443,7 @@ function loadGame(start=true, gotNaN=false) {
     wipe()
     load(tmp.prevSave)
     resetTemp()
+    /**@param smh... */
     setupHTML()
 
     for (let x in UPGS) {
